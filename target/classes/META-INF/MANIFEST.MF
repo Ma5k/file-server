@@ -3,7 +3,7 @@ Implementation-Title: file-server
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: Mask
 Implementation-Vendor-Id: com.mask
-Build-Jdk: 1.8.0_60
+Build-Jdk: 1.8.0_191
 Implementation-URL: http://projects.spring.io/spring-boot/file-server/
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.

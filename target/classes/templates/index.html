@@ -19,12 +19,6 @@
         </table>
         
     </form>
-    
-    
-    <form id="uploadForm2" enctype="multipart/form-data">
-    <input id="file" type="file" name="file"/>
-    <button id="upload" type="button">upload</button>
-	</form>
 </div>
 
 <div>
@@ -40,6 +34,7 @@
         <td>size</td>
         <td>uploadDate</td>
         <td>md5</td>
+        <td colspan="2">operating</td>
     </tr>
     </thead>
     <tbody>
@@ -53,6 +48,8 @@
         <td th:text="${file.size}" ></td>
         <td th:text="${file.uploadDate}" ></td>
         <td th:text="${file.md5}" ></td>
+        <td><a th:href="@{'view/' + ${file.id}}" th:text="预览" /></td>
+        <td><a th:href="@{'del/' + ${file.id}}" th:text="删除" /></td>
     </tr>
     </tbody>
 </table>

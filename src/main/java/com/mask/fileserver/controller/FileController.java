@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -111,6 +112,20 @@ public class FileController {
                 "You successfully uploaded " + file.getOriginalFilename() + "!");
 
         return "redirect:/";
+    }
+    
+    
+    @GetMapping("/del/{id}")
+    public String deleteFile(@PathVariable String id, RedirectAttributes redirectAttributes) {
+    	try {
+    		fileService.removeFile(id);
+    		 redirectAttributes.addFlashAttribute("message",
+    	                "You successfully delete " + id + "!");
+    	} catch (Exception e) {
+    		 redirectAttributes.addFlashAttribute("message",
+    	                "fail to delete " + id + "!");
+		}
+    	return "redirect:/";
     }
  
     @PostMapping("/upload")
